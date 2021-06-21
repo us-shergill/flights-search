@@ -1,0 +1,723 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "departing": {
+                "origin": "DFW",
+                "destination": "SFO",
+                "dates": [
+                    {
+                        "date": "2017-06-18",
+                        "day": "MON",
+                        "selected_date": true,
+                        "flights": [
+                            {
+                                "flightid": 1234,
+                                "origincode": 12,
+                                "departurecode": 25,
+                                "date": "2017-06-18",
+                                "available": 4,
+                                "currency": "USD",
+                                "fare": {
+                                    "main": 525,
+                                    "first": 1000
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "returning": {
+                "origin": "SFO",
+                "destination": "DFW",
+                "dates": [
+                    {
+                        "date": "2017-06-20",
+                        "day": "TUE",
+                        "selected_date": true,
+                        "flights": [
+                            {
+                                "flightid": 1234,
+                                "origincode": 12,
+                                "departurecode": 25,
+                                "date": "2017-06-18",
+                                "available": 4,
+                                "currency": "USD",
+                                "fare": {
+                                    "main": 525,
+                                    "first": 1000
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "required": [
+        "departing",
+        "returning"
+    ],
+    "properties": {
+        "departing": {
+            "$id": "#/properties/departing",
+            "type": "object",
+            "title": "The departing schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "origin": "DFW",
+                    "destination": "SFO",
+                    "dates": [
+                        {
+                            "date": "2017-06-18",
+                            "day": "MON",
+                            "selected_date": true,
+                            "flights": [
+                                {
+                                    "flightid": 1234,
+                                    "origincode": 12,
+                                    "departurecode": 25,
+                                    "date": "2017-06-18",
+                                    "available": 4,
+                                    "currency": "USD",
+                                    "fare": {
+                                        "main": 525,
+                                        "first": 1000
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "required": [
+                "origin",
+                "destination",
+                "dates"
+            ],
+            "properties": {
+                "origin": {
+                    "$id": "#/properties/departing/properties/origin",
+                    "type": "string",
+                    "title": "The origin schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "DFW"
+                    ]
+                },
+                "destination": {
+                    "$id": "#/properties/departing/properties/destination",
+                    "type": "string",
+                    "title": "The destination schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "SFO"
+                    ]
+                },
+                "dates": {
+                    "$id": "#/properties/departing/properties/dates",
+                    "type": "array",
+                    "title": "The dates schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [
+                        [
+                            {
+                                "date": "2017-06-18",
+                                "day": "MON",
+                                "selected_date": true,
+                                "flights": [
+                                    {
+                                        "flightid": 1234,
+                                        "origincode": 12,
+                                        "departurecode": 25,
+                                        "date": "2017-06-18",
+                                        "available": 4,
+                                        "currency": "USD",
+                                        "fare": {
+                                            "main": 525,
+                                            "first": 1000
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    ],
+                    "additionalItems": true,
+                    "items": {
+                        "$id": "#/properties/departing/properties/dates/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/departing/properties/dates/items/anyOf/0",
+                                "type": "object",
+                                "title": "The first anyOf schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": {},
+                                "examples": [
+                                    {
+                                        "date": "2017-06-18",
+                                        "day": "MON",
+                                        "selected_date": true,
+                                        "flights": [
+                                            {
+                                                "flightid": 1234,
+                                                "origincode": 12,
+                                                "departurecode": 25,
+                                                "date": "2017-06-18",
+                                                "available": 4,
+                                                "currency": "USD",
+                                                "fare": {
+                                                    "main": 525,
+                                                    "first": 1000
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "required": [
+                                    "date",
+                                    "day",
+                                    "selected_date",
+                                    "flights"
+                                ],
+                                "properties": {
+                                    "date": {
+                                        "$id": "#/properties/departing/properties/dates/items/anyOf/0/properties/date",
+                                        "type": "string",
+                                        "title": "The date schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "2017-06-18"
+                                        ]
+                                    },
+                                    "day": {
+                                        "$id": "#/properties/departing/properties/dates/items/anyOf/0/properties/day",
+                                        "type": "string",
+                                        "title": "The day schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "MON"
+                                        ]
+                                    },
+                                    "selected_date": {
+                                        "$id": "#/properties/departing/properties/dates/items/anyOf/0/properties/selected_date",
+                                        "type": "boolean",
+                                        "title": "The selected_date schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": false,
+                                        "examples": [
+                                            true
+                                        ]
+                                    },
+                                    "flights": {
+                                        "$id": "#/properties/departing/properties/dates/items/anyOf/0/properties/flights",
+                                        "type": "array",
+                                        "title": "The flights schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": [],
+                                        "examples": [
+                                            [
+                                                {
+                                                    "flightid": 1234,
+                                                    "origincode": 12,
+                                                    "departurecode": 25,
+                                                    "date": "2017-06-18",
+                                                    "available": 4,
+                                                    "currency": "USD",
+                                                    "fare": {
+                                                        "main": 525,
+                                                        "first": 1000
+                                                    }
+                                                }
+                                            ]
+                                        ],
+                                        "additionalItems": true,
+                                        "items": {
+                                            "$id": "#/properties/departing/properties/dates/items/anyOf/0/properties/flights/items",
+                                            "anyOf": [
+                                                {
+                                                    "$id": "#/properties/departing/properties/dates/items/anyOf/0/properties/flights/items/anyOf/0",
+                                                    "type": "object",
+                                                    "title": "The first anyOf schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": {},
+                                                    "examples": [
+                                                        {
+                                                            "flightid": 1234,
+                                                            "origincode": 12,
+                                                            "departurecode": 25,
+                                                            "date": "2017-06-18",
+                                                            "available": 4,
+                                                            "currency": "USD",
+                                                            "fare": {
+                                                                "main": 525,
+                                                                "first": 1000
+                                                            }
+                                                        }
+                                                    ],
+                                                    "required": [
+                                                        "flightid",
+                                                        "origincode",
+                                                        "departurecode",
+                                                        "date",
+                                                        "available",
+                                                        "currency",
+                                                        "fare"
+                                                    ],
+                                                    "properties": {
+                                                        "flightid": {
+                                                            "$id": "#/properties/departing/properties/dates/items/anyOf/0/properties/flights/items/anyOf/0/properties/flightid",
+                                                            "type": "integer",
+                                                            "title": "The flightid schema",
+                                                            "description": "An explanation about the purpose of this instance.",
+                                                            "default": 0,
+                                                            "examples": [
+                                                                1234
+                                                            ]
+                                                        },
+                                                        "origincode": {
+                                                            "$id": "#/properties/departing/properties/dates/items/anyOf/0/properties/flights/items/anyOf/0/properties/origincode",
+                                                            "type": "integer",
+                                                            "title": "The origincode schema",
+                                                            "description": "An explanation about the purpose of this instance.",
+                                                            "default": 0,
+                                                            "examples": [
+                                                                12
+                                                            ]
+                                                        },
+                                                        "departurecode": {
+                                                            "$id": "#/properties/departing/properties/dates/items/anyOf/0/properties/flights/items/anyOf/0/properties/departurecode",
+                                                            "type": "integer",
+                                                            "title": "The departurecode schema",
+                                                            "description": "An explanation about the purpose of this instance.",
+                                                            "default": 0,
+                                                            "examples": [
+                                                                25
+                                                            ]
+                                                        },
+                                                        "date": {
+                                                            "$id": "#/properties/departing/properties/dates/items/anyOf/0/properties/flights/items/anyOf/0/properties/date",
+                                                            "type": "string",
+                                                            "title": "The date schema",
+                                                            "description": "An explanation about the purpose of this instance.",
+                                                            "default": "",
+                                                            "examples": [
+                                                                "2017-06-18"
+                                                            ]
+                                                        },
+                                                        "available": {
+                                                            "$id": "#/properties/departing/properties/dates/items/anyOf/0/properties/flights/items/anyOf/0/properties/available",
+                                                            "type": "integer",
+                                                            "title": "The available schema",
+                                                            "description": "An explanation about the purpose of this instance.",
+                                                            "default": 0,
+                                                            "examples": [
+                                                                4
+                                                            ]
+                                                        },
+                                                        "currency": {
+                                                            "$id": "#/properties/departing/properties/dates/items/anyOf/0/properties/flights/items/anyOf/0/properties/currency",
+                                                            "type": "string",
+                                                            "title": "The currency schema",
+                                                            "description": "An explanation about the purpose of this instance.",
+                                                            "default": "",
+                                                            "examples": [
+                                                                "USD"
+                                                            ]
+                                                        },
+                                                        "fare": {
+                                                            "$id": "#/properties/departing/properties/dates/items/anyOf/0/properties/flights/items/anyOf/0/properties/fare",
+                                                            "type": "object",
+                                                            "title": "The fare schema",
+                                                            "description": "An explanation about the purpose of this instance.",
+                                                            "default": {},
+                                                            "examples": [
+                                                                {
+                                                                    "main": 525,
+                                                                    "first": 1000
+                                                                }
+                                                            ],
+                                                            "required": [
+                                                                "main",
+                                                                "first"
+                                                            ],
+                                                            "properties": {
+                                                                "main": {
+                                                                    "$id": "#/properties/departing/properties/dates/items/anyOf/0/properties/flights/items/anyOf/0/properties/fare/properties/main",
+                                                                    "type": "integer",
+                                                                    "title": "The main schema",
+                                                                    "description": "An explanation about the purpose of this instance.",
+                                                                    "default": 0,
+                                                                    "examples": [
+                                                                        525
+                                                                    ]
+                                                                },
+                                                                "first": {
+                                                                    "$id": "#/properties/departing/properties/dates/items/anyOf/0/properties/flights/items/anyOf/0/properties/fare/properties/first",
+                                                                    "type": "integer",
+                                                                    "title": "The first schema",
+                                                                    "description": "An explanation about the purpose of this instance.",
+                                                                    "default": 0,
+                                                                    "examples": [
+                                                                        1000
+                                                                    ]
+                                                                }
+                                                            },
+                                                            "additionalProperties": true
+                                                        }
+                                                    },
+                                                    "additionalProperties": true
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "additionalProperties": true
+                            }
+                        ]
+                    }
+                }
+            },
+            "additionalProperties": true
+        },
+        "returning": {
+            "$id": "#/properties/returning",
+            "type": "object",
+            "title": "The returning schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "origin": "SFO",
+                    "destination": "DFW",
+                    "dates": [
+                        {
+                            "date": "2017-06-20",
+                            "day": "TUE",
+                            "selected_date": true,
+                            "flights": [
+                                {
+                                    "flightid": 1234,
+                                    "origincode": 12,
+                                    "departurecode": 25,
+                                    "date": "2017-06-18",
+                                    "available": 4,
+                                    "currency": "USD",
+                                    "fare": {
+                                        "main": 525,
+                                        "first": 1000
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "required": [
+                "origin",
+                "destination",
+                "dates"
+            ],
+            "properties": {
+                "origin": {
+                    "$id": "#/properties/returning/properties/origin",
+                    "type": "string",
+                    "title": "The origin schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "SFO"
+                    ]
+                },
+                "destination": {
+                    "$id": "#/properties/returning/properties/destination",
+                    "type": "string",
+                    "title": "The destination schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "DFW"
+                    ]
+                },
+                "dates": {
+                    "$id": "#/properties/returning/properties/dates",
+                    "type": "array",
+                    "title": "The dates schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [
+                        [
+                            {
+                                "date": "2017-06-20",
+                                "day": "TUE",
+                                "selected_date": true,
+                                "flights": [
+                                    {
+                                        "flightid": 1234,
+                                        "origincode": 12,
+                                        "departurecode": 25,
+                                        "date": "2017-06-18",
+                                        "available": 4,
+                                        "currency": "USD",
+                                        "fare": {
+                                            "main": 525,
+                                            "first": 1000
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    ],
+                    "additionalItems": true,
+                    "items": {
+                        "$id": "#/properties/returning/properties/dates/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/returning/properties/dates/items/anyOf/0",
+                                "type": "object",
+                                "title": "The first anyOf schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": {},
+                                "examples": [
+                                    {
+                                        "date": "2017-06-20",
+                                        "day": "TUE",
+                                        "selected_date": true,
+                                        "flights": [
+                                            {
+                                                "flightid": 1234,
+                                                "origincode": 12,
+                                                "departurecode": 25,
+                                                "date": "2017-06-18",
+                                                "available": 4,
+                                                "currency": "USD",
+                                                "fare": {
+                                                    "main": 525,
+                                                    "first": 1000
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "required": [
+                                    "date",
+                                    "day",
+                                    "selected_date",
+                                    "flights"
+                                ],
+                                "properties": {
+                                    "date": {
+                                        "$id": "#/properties/returning/properties/dates/items/anyOf/0/properties/date",
+                                        "type": "string",
+                                        "title": "The date schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "2017-06-20"
+                                        ]
+                                    },
+                                    "day": {
+                                        "$id": "#/properties/returning/properties/dates/items/anyOf/0/properties/day",
+                                        "type": "string",
+                                        "title": "The day schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": "",
+                                        "examples": [
+                                            "TUE"
+                                        ]
+                                    },
+                                    "selected_date": {
+                                        "$id": "#/properties/returning/properties/dates/items/anyOf/0/properties/selected_date",
+                                        "type": "boolean",
+                                        "title": "The selected_date schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": false,
+                                        "examples": [
+                                            true
+                                        ]
+                                    },
+                                    "flights": {
+                                        "$id": "#/properties/returning/properties/dates/items/anyOf/0/properties/flights",
+                                        "type": "array",
+                                        "title": "The flights schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": [],
+                                        "examples": [
+                                            [
+                                                {
+                                                    "flightid": 1234,
+                                                    "origincode": 12,
+                                                    "departurecode": 25,
+                                                    "date": "2017-06-18",
+                                                    "available": 4,
+                                                    "currency": "USD",
+                                                    "fare": {
+                                                        "main": 525,
+                                                        "first": 1000
+                                                    }
+                                                }
+                                            ]
+                                        ],
+                                        "additionalItems": true,
+                                        "items": {
+                                            "$id": "#/properties/returning/properties/dates/items/anyOf/0/properties/flights/items",
+                                            "anyOf": [
+                                                {
+                                                    "$id": "#/properties/returning/properties/dates/items/anyOf/0/properties/flights/items/anyOf/0",
+                                                    "type": "object",
+                                                    "title": "The first anyOf schema",
+                                                    "description": "An explanation about the purpose of this instance.",
+                                                    "default": {},
+                                                    "examples": [
+                                                        {
+                                                            "flightid": 1234,
+                                                            "origincode": 12,
+                                                            "departurecode": 25,
+                                                            "date": "2017-06-18",
+                                                            "available": 4,
+                                                            "currency": "USD",
+                                                            "fare": {
+                                                                "main": 525,
+                                                                "first": 1000
+                                                            }
+                                                        }
+                                                    ],
+                                                    "required": [
+                                                        "flightid",
+                                                        "origincode",
+                                                        "departurecode",
+                                                        "date",
+                                                        "available",
+                                                        "currency",
+                                                        "fare"
+                                                    ],
+                                                    "properties": {
+                                                        "flightid": {
+                                                            "$id": "#/properties/returning/properties/dates/items/anyOf/0/properties/flights/items/anyOf/0/properties/flightid",
+                                                            "type": "integer",
+                                                            "title": "The flightid schema",
+                                                            "description": "An explanation about the purpose of this instance.",
+                                                            "default": 0,
+                                                            "examples": [
+                                                                1234
+                                                            ]
+                                                        },
+                                                        "origincode": {
+                                                            "$id": "#/properties/returning/properties/dates/items/anyOf/0/properties/flights/items/anyOf/0/properties/origincode",
+                                                            "type": "integer",
+                                                            "title": "The origincode schema",
+                                                            "description": "An explanation about the purpose of this instance.",
+                                                            "default": 0,
+                                                            "examples": [
+                                                                12
+                                                            ]
+                                                        },
+                                                        "departurecode": {
+                                                            "$id": "#/properties/returning/properties/dates/items/anyOf/0/properties/flights/items/anyOf/0/properties/departurecode",
+                                                            "type": "integer",
+                                                            "title": "The departurecode schema",
+                                                            "description": "An explanation about the purpose of this instance.",
+                                                            "default": 0,
+                                                            "examples": [
+                                                                25
+                                                            ]
+                                                        },
+                                                        "date": {
+                                                            "$id": "#/properties/returning/properties/dates/items/anyOf/0/properties/flights/items/anyOf/0/properties/date",
+                                                            "type": "string",
+                                                            "title": "The date schema",
+                                                            "description": "An explanation about the purpose of this instance.",
+                                                            "default": "",
+                                                            "examples": [
+                                                                "2017-06-18"
+                                                            ]
+                                                        },
+                                                        "available": {
+                                                            "$id": "#/properties/returning/properties/dates/items/anyOf/0/properties/flights/items/anyOf/0/properties/available",
+                                                            "type": "integer",
+                                                            "title": "The available schema",
+                                                            "description": "An explanation about the purpose of this instance.",
+                                                            "default": 0,
+                                                            "examples": [
+                                                                4
+                                                            ]
+                                                        },
+                                                        "currency": {
+                                                            "$id": "#/properties/returning/properties/dates/items/anyOf/0/properties/flights/items/anyOf/0/properties/currency",
+                                                            "type": "string",
+                                                            "title": "The currency schema",
+                                                            "description": "An explanation about the purpose of this instance.",
+                                                            "default": "",
+                                                            "examples": [
+                                                                "USD"
+                                                            ]
+                                                        },
+                                                        "fare": {
+                                                            "$id": "#/properties/returning/properties/dates/items/anyOf/0/properties/flights/items/anyOf/0/properties/fare",
+                                                            "type": "object",
+                                                            "title": "The fare schema",
+                                                            "description": "An explanation about the purpose of this instance.",
+                                                            "default": {},
+                                                            "examples": [
+                                                                {
+                                                                    "main": 525,
+                                                                    "first": 1000
+                                                                }
+                                                            ],
+                                                            "required": [
+                                                                "main",
+                                                                "first"
+                                                            ],
+                                                            "properties": {
+                                                                "main": {
+                                                                    "$id": "#/properties/returning/properties/dates/items/anyOf/0/properties/flights/items/anyOf/0/properties/fare/properties/main",
+                                                                    "type": "integer",
+                                                                    "title": "The main schema",
+                                                                    "description": "An explanation about the purpose of this instance.",
+                                                                    "default": 0,
+                                                                    "examples": [
+                                                                        525
+                                                                    ]
+                                                                },
+                                                                "first": {
+                                                                    "$id": "#/properties/returning/properties/dates/items/anyOf/0/properties/flights/items/anyOf/0/properties/fare/properties/first",
+                                                                    "type": "integer",
+                                                                    "title": "The first schema",
+                                                                    "description": "An explanation about the purpose of this instance.",
+                                                                    "default": 0,
+                                                                    "examples": [
+                                                                        1000
+                                                                    ]
+                                                                }
+                                                            },
+                                                            "additionalProperties": true
+                                                        }
+                                                    },
+                                                    "additionalProperties": true
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "additionalProperties": true
+                            }
+                        ]
+                    }
+                }
+            },
+            "additionalProperties": true
+        }
+    },
+    "additionalProperties": true
+}
